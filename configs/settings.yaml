@@ -1,0 +1,13 @@
+llm:
+  model_name: "qwen3:8b"
+  provider: "ollama"
+  context_window: 8000
+  base_url: "http://localhost:11434"
+
+rag:
+  chunk_size: 512
+  chunk_overlap: 50
+  vector_db: "chromadb"
+  embedding_model: "all-MiniLM-L6-v2"
+  persist_directory: "data/chromadb"
+  top_k: 5

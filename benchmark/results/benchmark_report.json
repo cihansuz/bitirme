@@ -1,0 +1,20 @@
+[
+  {
+    "test_name": "Context-8K-Test",
+    "target_tokens": 8000,
+    "actual_tokens": 8601,
+    "retrieval_sec": 0.158,
+    "ttft_sec": 24.88,
+    "total_sec": 71.1,
+    "throughput_tps": 43.9
+  },
+  {
+    "test_name": "Context-16K-Test",
+    "target_tokens": 16000,
+    "actual_tokens": 11493,
+    "retrieval_sec": 0.881,
+    "ttft_sec": 66.77,
+    "total_sec": 146.35,
+    "throughput_tps": 32.3
+  }
+]

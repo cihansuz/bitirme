@@ -1,0 +1,12 @@
+{
+  "executionEnvironments": [
+    {
+      "root": ".",
+      "extraPaths": [
+        ".",
+        "./src",
+        "./modules"
+      ]
+    }
+  ]
+}

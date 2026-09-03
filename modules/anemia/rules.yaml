@@ -1,0 +1,23 @@
+disease_id: "anemia"
+name: "Demir Eksikliği Anemisi & Demir Yetersizliği"
+triggers:
+  - biomarker: "Ferritin"
+    operator: "<="
+    threshold: 30.0
+    unit: "ng/mL"
+  - biomarker: "Hemoglobin"
+    operator: "<="
+    threshold: 12.0
+    unit: "g/dL"
+  - biomarker: "Serum_Iron"
+    operator: "<="
+    threshold: 50.0
+    unit: "ug/dL"
+constraints:
+  min_iron_mg: 18.0
+  min_vitamin_c_mg: 75.0
+  calcium_separation_hours: 2.0
+  tannin_separation_hours: 2.0
+rag_metadata_filter:
+  domain: "hematology"
+  tags: ["anemia", "iron_deficiency", "ferritin", "bioavailability", "iron_absorption"]

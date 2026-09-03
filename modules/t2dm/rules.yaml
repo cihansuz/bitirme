@@ -1,0 +1,19 @@
+disease_id: "t2dm"
+name: "Tip 2 Diabetes Mellitus & İnsülin Direnci"
+triggers:
+  - biomarker: "HbA1c"
+    operator: ">="
+    threshold: 6.5
+    unit: "%"
+  - biomarker: "Fasting_Glucose"
+    operator: ">="
+    threshold: 126
+    unit: "mg/dL"
+constraints:
+  carbohydrate_ratio_max: 0.45
+  added_sugar_max_g: 0
+  minimum_fiber_g: 30
+  glycemic_index_max: 55
+rag_metadata_filter:
+  domain: "endocrinology"
+  tags: ["t2dm", "insulin_resistance", "glycemic_control"]

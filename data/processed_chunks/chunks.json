@@ -1,0 +1,202 @@
+[
+  {
+    "chunk_id": "ADA_2024_P14",
+    "title": "Carbohydrate Intake and Quality",
+    "text": "In individuals with type 2 diabetes, carbohydrate intake should emphasize nutrient-dense carbohydrate sources with high dietary fiber and minimal added sugars. Monitoring carbohydrate intake and considering the blood glucose response to dietary carbohydrates are key to improving postprandial glucose control. Diets should prioritize whole grains, legumes, vegetables, and whole fruits over refined carbohydrates and sugar-sweetened beverages.",
+    "disease": "t2dm",
+    "tags": "t2dm,insulin_resistance,glycemic_control,fiber,carbohydrate",
+    "source": "ada_2024_diabetes.md"
+  },
+  {
+    "chunk_id": "ADA_2024_P15",
+    "title": "Fiber Targets and Glycemic Control",
+    "text": "Evidence confirms that higher dietary fiber intake—specifically reaching or exceeding 30 g/day (or 14 g per 1000 kcal)—is associated with lower all-cause mortality, reduced glycated hemoglobin (HbA1c), improved insulin sensitivity, and reduced glycemic excursions in patients with type 2 diabetes. Soluble fiber slows gastric emptying and carbohydrate absorption, attenuating postprandial hyperglycemia.",
+    "disease": "t2dm",
+    "tags": "t2dm,insulin_resistance,glycemic_control,fiber,carbohydrate",
+    "source": "ada_2024_diabetes.md"
+  },
+  {
+    "chunk_id": "ADA_2024_P16",
+    "title": "Diagnostic Cutoffs and Biomarker Interpretation",
+    "text": "The American Diabetes Association defines diagnostic thresholds as follows:\n- Fasting Plasma Glucose (FPG) >= 126 mg/dL (7.0 mmol/L) indicates Diabetes Mellitus. Impaired Fasting Glucose (Prediabetes) is defined between 100 mg/dL and 125 mg/dL.\n- Glycated Hemoglobin (HbA1c) >= 6.5% (48 mmol/mol) indicates Diabetes Mellitus. Prediabetes ranges from 5.7% to 6.4%.\n- When HbA1c is above 8.0%, immediate dietary and pharmacotherapy reassessment is warranted to mitigate microvascular and macrovascular complications.",
+    "disease": "t2dm",
+    "tags": "t2dm,insulin_resistance,glycemic_control,fiber,carbohydrate",
+    "source": "ada_2024_diabetes.md"
+  },
+  {
+    "chunk_id": "ADA_2024_P17",
+    "title": "Saturated Fat and Lipid Management",
+    "text": "For individuals with diabetes and dyslipidemia, saturated fatty acid intake should be restricted to less than 7% to 10% of total daily energy intake, replacing saturated fats with monounsaturated fatty acids (MUFA) and polyunsaturated fatty acids (PUFA) from olive oil, nuts, seeds, and oily fish to mitigate atherosclerotic cardiovascular risk.",
+    "disease": "t2dm",
+    "tags": "t2dm,insulin_resistance,glycemic_control,fiber,carbohydrate",
+    "source": "ada_2024_diabetes.md"
+  },
+  {
+    "chunk_id": "ADA_2024_P18",
+    "title": "Added Sugar and Sweetener Restrictions",
+    "text": "Energy intake from free or added sugars should be minimized (ideally 0% added refined sugars). Sugar-sweetened beverages, commercial baked goods, and syrups promote acute postprandial glycemic spikes and hepatic steatosis, and are strongly discouraged.",
+    "disease": "t2dm",
+    "tags": "t2dm,insulin_resistance,glycemic_control,fiber,carbohydrate",
+    "source": "ada_2024_diabetes.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_ANAMNEZ",
+    "title": "Diyabet Anamnezi, Antropometri ve Kilo Değişimi",
+    "text": "Tip 2 diyabetli bireylerde boy, kilo, BKİ, bel çevresi, son 3-6 aydaki kilo değişimi, ideal/ulaşılabilir kilo hedefi ve istem dışı kilo kaybı veya hızlı kilo alımı mutlaka değerlendirilmelidir. Eşlik eden hastalıklar, tanı yılı, son HbA1c düzeyi, semptomlar ve evde açlık/tokluk kan şekeri ölçüm sıklığı sorgulanmalıdır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_ACTIVITY",
+    "title": "Fiziksel Aktivite ve Hareketlilik Standardı",
+    "text": "Tip 2 diyabette haftada en az 150 dakika orta şiddetli fiziksel aktivite (tempolu yürüyüş, yüzme, pilates vb.) 3 güne bölünerek önerilir. Ev işi yapmak veya ayakta çalışmak fiziksel aktivite sayılmaz; günlük adım sayısı ve aktivite süresi sorgulanmalıdır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_BTK_MEALS",
+    "title": "Besin Tüketim Kaydı (BTK) ve Öğün Zamanlaması",
+    "text": "Besin tüketim kaydı 3 günlük (2 gün hafta içi, 1 gün hafta sonu) geriye dönük alınmalıdır. Uyanma saati, ilk besin alımı ve öğün aralıkları sorgulanmalıdır. Geç kahvaltı yapıp öğle yemeğine bağlayanlarda kan şekeri dalgalanmaları ve insülin kullananlarda öğün saati disiplini esastır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_LAB_LEVELS",
+    "title": "4 Seviyeli Kan Değeri Sınıflandırması ve Renk Kodlaması",
+    "text": "Laboratuvar bulguları 4 seviyeli sistemle değerlendirilir: Kırmızı (Kritik/Acil hekim konsültasyonu, hipoglisemi <70 mg/dL, DKA, nefropati), Turuncu (Uzman hekim ve diyetisyen birincil takibi), Sarı (İnsülin direnci, hiperglisemi takibi), Yeşil (Belirgin risk yok, normal kontrol). HbA1c tek başına yeterli değildir; 3 aylık seyir ve önceki kan tahlili sonuçlarıyla karşılaştırılmalıdır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_COMORBID_CKD",
+    "title": "Diyabet ve Kronik Böbrek Hastalığı (KBY) Çakışma Yönetimi",
+    "text": "Hasta hem diyabet hem de kronik böbrek hastasıysa, beslenme planında böbrek hastalığı önceliklidir. Diyabette tercih edilen bulgur, yüksek potasyum ve sodyum içeriği nedeniyle böbrek hastalarında kısıtlanırken; pirinç pilavı böbrek hastasında tercih edilebilir. Karbonhidrat glisemik yükü ilaçlarla dengelenirken böbreğin korunması hayati esastır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_FOOD_EXCLUSIONS",
+    "title": "Diyetten Kesinlikle Çıkarılacak Besinler ve Değişim İlkeleri",
+    "text": "Şekerli ve gazlı içecekler, hazır paketli ürünler (özellikle doymuş/trans yağ ve palm yağı içerenler), katkı maddeli gıdalar, şarküteri ürünleri (salam, sosis, sucuk) ve rafine hamur işleri diyetten tamamen çıkarılmalıdır. Uygun olmayan besin yerine aynı gruptan, düşük glisemik indeksli ve benzer makro/mikro içeriğe sahip eşdeğer besinler (yoğurt yerine ayran/peynir) konulmalıdır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_ALLERGY_GLUTEN",
+    "title": "Alerji, İntolerans ve Çapraz Bulaşma Protokolü",
+    "text": "Alerji bağışıklık kaynaklı olup hayati risk taşır; intoleransta eliminasyon diyeti uygulanır. Sistem alerjen uyarısını kesinlikle yapmalı; çapraz bulaşma riskine (ayrı hazırlık alanı, fırın ayrımı) dikkat edilmelidir. Paketli gıdalarda alerjen içeriyor / eser miktarda içerebilir / alerjen içermiyor seviyeleri belirtilmelidir.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_PHYSICIAN_ALERT",
+    "title": "Sistemin Hekime Acil Uyarı Vermesi Gereken Klinik Tablolar",
+    "text": "1) Tekrarlayan hipoglisemi (<70 mg/dL; titreme, terleme, çarpıntı), 2) Belirgin hiperglisemi (>125 mg/dL açlık, aşırı susama, ağız kuruluğu), 3) Diyabetik Ketoasidoz (DKA: nefeste aseton kokusu, bulantı, kusma, hızlı solunum - yoğun bakım gerektirir), 4) Diyabetik nefropati ve karaciğer komplikasyonları durumunda sistem hekime acil uyarı bayrağı açmalıdır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "CLIN_T2DM_METFORMIN_B12",
+    "title": "İlaç Tedavisi, Metformin ve B12 Takibi",
+    "text": "Metformin kullanan hastalarda B12 vitamini emilimi azaldığından alt sınıra yakın değerler gözden kaçırılmamalıdır. Diyetisyenin karar destek ekranında: HbA1c durumu, hipoglisemi öyküsü, kullanılan ilaçlar, B12 düzeyi ve kanıta dayalı makale atıfları tek bir klinik özet panelinde sunulmalıdır.",
+    "disease": "general",
+    "tags": "",
+    "source": "dietitian_expert_protocol_t2dm.md"
+  },
+  {
+    "chunk_id": "DRUG_INT_P31",
+    "title": "Metformin and Vitamin B12 Depletion",
+    "text": "Metformin is a first-line biguanide for type 2 diabetes. Prolonged metformin therapy (>= 2 years) is causally associated with reduced intestinal absorption of Vitamin B12 (cobalamin) due to calcium-dependent ileal membrane antagonism. Diets should ensure adequate vitamin B12 food sources, and routine annual serum B12 monitoring is recommended. Concomitant heavy alcohol ingestion with metformin strongly increases the risk of life-threatening lactic acidosis and is strictly contraindicated.",
+    "disease": "pharmacology",
+    "tags": "drug_interaction,metformin,levothyroxine,sglt2,ace_inhibitor",
+    "source": "drug_nutrient_interactions.md"
+  },
+  {
+    "chunk_id": "DRUG_INT_P32",
+    "title": "Levothyroxine and Absorption Interferences",
+    "text": "Levothyroxine (T4) requires an acidic gastric environment for optimal absorption. Ingestion of calcium carbonate supplements, dairy products (milk, yogurt), dietary iron supplements, or unfermented soy products concurrently with levothyroxine markedly decreases drug bioavailability by up to 30-50%. Patients must schedule calcium-, iron-, and soy-rich foods at least 4 hours apart from their morning levothyroxine dose.",
+    "disease": "pharmacology",
+    "tags": "drug_interaction,metformin,levothyroxine,sglt2,ace_inhibitor",
+    "source": "drug_nutrient_interactions.md"
+  },
+  {
+    "chunk_id": "DRUG_INT_P33",
+    "title": "SGLT2 Inhibitors and Euglycemic DKA Risks",
+    "text": "Sodium-glucose cotransporter 2 (SGLT2) inhibitors (e.g., empagliflozin, dapagliflozin) promote urinary glucose excretion. In patients treated with SGLT2 inhibitors, very-low-carbohydrate or ketogenic diets (< 50 g/day) trigger rapid glycogen depletion, accelerated lipolysis, and severe euglycemic diabetic ketoasidoz (euDKA) despite near-normal serum glucose levels. Extreme carbohydrate restriction is strictly contraindicated.",
+    "disease": "pharmacology",
+    "tags": "drug_interaction,metformin,levothyroxine,sglt2,ace_inhibitor",
+    "source": "drug_nutrient_interactions.md"
+  },
+  {
+    "chunk_id": "DRUG_INT_P34",
+    "title": "ACE Inhibitors and Hyperkalemia Precaution",
+    "text": "Angiotensin-converting enzyme (ACE) inhibitors (e.g., ramipril, enalapril) decrease aldosterone secretion, reducing urinary potassium elimination. Concomitant excessive intake of potassium-rich salt substitutes (potassium chloride, KCl) or high-dose potassium supplements creates a high risk of lethal hyperkalemia, especially in patients with mild-to-moderate renal insufficiency.",
+    "disease": "pharmacology",
+    "tags": "drug_interaction,metformin,levothyroxine,sglt2,ace_inhibitor",
+    "source": "drug_nutrient_interactions.md"
+  },
+  {
+    "chunk_id": "ESPEN_2023_P21",
+    "title": "Macronutrient Distribution in Metabolic Disorders",
+    "text": "In patients with metabolic disorders, carbohydrate quality is paramount. A distribution of 40% to 45% of total energy from complex, low-glycemic-index carbohydrates combined with 15% to 20% protein and 30% to 35% healthy fats promotes metabolic flexibility, lipid normalization, and long-term glycemic stability.",
+    "disease": "metabolic_ckd",
+    "tags": "ckd,protein_restriction,egfr,macronutrient,anti_inflammatory",
+    "source": "espen_guidelines.md"
+  },
+  {
+    "chunk_id": "ESPEN_2023_P22",
+    "title": "Renal Compromise and Protein Restriction",
+    "text": "In patients exhibiting compromised renal function with an estimated Glomerular Filtration Rate (eGFR) < 30 mL/min/1.73m2 (Stage 4 to 5 CKD not on maintenance dialysis):\n- High-protein diets (> 1.0 g/kg body weight/day) accelerate intraglomerular hypertension and disease progression.\n- Dietary protein should be strictly restricted to 0.6 to 0.8 g/kg body weight/day (or <= 10-12% of total daily calories). High protein supplements and ketogenic diets are contraindicated.",
+    "disease": "metabolic_ckd",
+    "tags": "ckd,protein_restriction,egfr,macronutrient,anti_inflammatory",
+    "source": "espen_guidelines.md"
+  },
+  {
+    "chunk_id": "ESPEN_2023_P23",
+    "title": "Micronutrient Synergy and Anti-Inflammatory Balance",
+    "text": "Adequate intake of antioxidant vitamins (vitamins C and E) and trace minerals (zinc, selenium, iron) reduces systemic oxidative stress in chronic inflammatory states. Micronutrient supplementation should be guided by documented biochemical deficiencies rather than supra-therapeutic empiric doses.",
+    "disease": "metabolic_ckd",
+    "tags": "ckd,protein_restriction,egfr,macronutrient,anti_inflammatory",
+    "source": "espen_guidelines.md"
+  },
+  {
+    "chunk_id": "WHO_IDA_P01",
+    "title": "Diagnostic Thresholds and Staging of Iron Deficiency",
+    "text": "The World Health Organization establishes that:\n- Serum ferritin < 15 ug/L (or ng/mL) in non-pregnant adults reflects depleted iron stores. In clinical practice, values < 30 ug/L in the presence of inflammatory markers indicate functional iron deficiency.\n- Hemoglobin (Hb) levels below 12.0 g/dL in non-pregnant females and below 13.0 g/dL in males indicate anemia. Severe anemia is defined as Hb < 8.0 g/dL, requiring prompt clinical intervention.",
+    "disease": "anemia",
+    "tags": "anemia,iron_deficiency,ferritin,bioavailability,vitamin_c,tannin",
+    "source": "who_anemia_2023.md"
+  },
+  {
+    "chunk_id": "WHO_IDA_P02",
+    "title": "Enhancers of Non-Heme Iron Bioavailability",
+    "text": "Ascorbic acid (Vitamin C) is the most potent dietary enhancer of non-heme iron absorption. Co-ingestion of at least 50 to 75 mg of ascorbic acid (e.g., from bell peppers, citrus fruits, tomatoes, or dark leafy greens) converts ferric (Fe3+) iron to the more absorbable ferrous (Fe2+) state, overcoming the inhibitory effects of dietary phytates and polyphenols.",
+    "disease": "anemia",
+    "tags": "anemia,iron_deficiency,ferritin,bioavailability,vitamin_c,tannin",
+    "source": "who_anemia_2023.md"
+  },
+  {
+    "chunk_id": "WHO_IDA_P03",
+    "title": "Inhibitors and Meal Timing Separation",
+    "text": "Dietary factors that severely inhibit non-heme iron absorption include:\n- Polyphenols and tannins found in black tea, green tea, and coffee: These bind non-heme iron in the intestinal lumen into insoluble complexes, reducing absorption by 50% to 70%.\n- Calcium from dairy products (milk, cheese, yogurt) or calcium supplements: Calcium competitively inhibits both heme and non-heme iron transport via divalent metal transporter 1 (DMT1).\n- Clinical Recommendation: High-tannin beverages and dairy products must be separated from iron-rich meals or iron supplements by at least 1.5 to 2 hours.",
+    "disease": "anemia",
+    "tags": "anemia,iron_deficiency,ferritin,bioavailability,vitamin_c,tannin",
+    "source": "who_anemia_2023.md"
+  },
+  {
+    "chunk_id": "WHO_IDA_P04",
+    "title": "Recommended Dietary Iron Targets",
+    "text": "For individuals diagnosed with iron deficiency or mild anemia, dietary iron intake should meet or exceed 18 mg/day for adult females of childbearing age and 10 mg/day for adult males, complemented by medical iron supplementation when indicated by the supervising dietitian or physician.",
+    "disease": "anemia",
+    "tags": "anemia,iron_deficiency,ferritin,bioavailability,vitamin_c,tannin",
+    "source": "who_anemia_2023.md"
+  }
+]
