@@ -1,0 +1,74 @@
+[
+  {
+    "model": "qwen3.5:4b",
+    "context_window": 8000,
+    "total_test_cases": 13,
+    "triage_accuracy_percent": 46.15,
+    "citation_fidelity_percent": 100.0,
+    "avg_chunk_recall_percent": 85.92,
+    "avg_retrieval_sec": 0.931,
+    "avg_ttft_sec": 83.56,
+    "avg_throughput_tps": 392.85,
+    "total_duration_sec": 1246.57
+  },
+  {
+    "model": "qwen3.5:4b",
+    "context_window": 10000,
+    "total_test_cases": 13,
+    "triage_accuracy_percent": 53.85,
+    "citation_fidelity_percent": 92.31,
+    "avg_chunk_recall_percent": 85.92,
+    "avg_retrieval_sec": 0.39,
+    "avg_ttft_sec": 79.96,
+    "avg_throughput_tps": 402.05,
+    "total_duration_sec": 1351.92
+  },
+  {
+    "model": "qwen3:8b",
+    "context_window": 8000,
+    "total_test_cases": 13,
+    "triage_accuracy_percent": 38.46,
+    "citation_fidelity_percent": 100.0,
+    "avg_chunk_recall_percent": 85.92,
+    "avg_retrieval_sec": 0.749,
+    "avg_ttft_sec": 16.4,
+    "avg_throughput_tps": 69.58,
+    "total_duration_sec": 407.65
+  },
+  {
+    "model": "qwen3:8b",
+    "context_window": 10000,
+    "total_test_cases": 13,
+    "triage_accuracy_percent": 46.15,
+    "citation_fidelity_percent": 100.0,
+    "avg_chunk_recall_percent": 85.92,
+    "avg_retrieval_sec": 0.232,
+    "avg_ttft_sec": 20.55,
+    "avg_throughput_tps": 49.59,
+    "total_duration_sec": 522.92
+  },
+  {
+    "model": "qwen3.5:9b",
+    "context_window": 8000,
+    "total_test_cases": 13,
+    "triage_accuracy_percent": 76.92,
+    "citation_fidelity_percent": 100.0,
+    "avg_chunk_recall_percent": 85.92,
+    "avg_retrieval_sec": 0.257,
+    "avg_ttft_sec": 157.07,
+    "avg_throughput_tps": 319.44,
+    "total_duration_sec": 2241.02
+  },
+  {
+    "model": "qwen3.5:9b",
+    "context_window": 10000,
+    "total_test_cases": 13,
+    "triage_accuracy_percent": 84.62,
+    "citation_fidelity_percent": 100.0,
+    "avg_chunk_recall_percent": 85.92,
+    "avg_retrieval_sec": 1.017,
+    "avg_ttft_sec": 176.32,
+    "avg_throughput_tps": 243.25,
+    "total_duration_sec": 2547.18
+  }
+]

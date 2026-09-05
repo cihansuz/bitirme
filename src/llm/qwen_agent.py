@@ -3,12 +3,13 @@ import urllib.request
 import urllib.error
 import re
 from typing import Dict, Any, List, Optional
+from src.config import get_llm_config
 from src.rag.hybrid_retriever import HybridRetriever
 
 
 class QwenAgent:
     """
-    Yerel Ollama (qwen3:8b) üzerinde çalışan Kanıta Dayalı Soru-Cevap Ajanı.
+    Yerel Ollama üzerinde çalışan Kanıta Dayalı Soru-Cevap Ajanı.
     - Kullanıcının sorusunu alır.
     - HybridRetriever ile makalelerden en alakalı pasajları çeker.
     - Modele bağlam olarak verir ve kaynak atıflı (citation) Türkçe yanıt üretir.
@@ -23,9 +24,16 @@ GÖREVİN:
 4. Yanıtını anlaşılır, profesyonel ve maddeler halinde Türkçe olarak açıkla.
 """
 
-    def __init__(self, model_name: str = "qwen3:8b", ollama_url: str = "http://localhost:11434"):
-        self.model_name = model_name
-        self.ollama_url = ollama_url
+    def __init__(
+        self,
+        model_name: Optional[str] = None,
+        ollama_url: Optional[str] = None,
+        context_window: Optional[int] = None
+    ):
+        llm_cfg = get_llm_config()
+        self.model_name = model_name or llm_cfg.get("model_name", "qwen3.5:9b")
+        self.ollama_url = ollama_url or llm_cfg.get("base_url", "http://localhost:11434")
+        self.context_window = context_window or llm_cfg.get("context_window", 8000)
         self.retriever = HybridRetriever()
 
     def ask(self, question: str, top_k: int = 4) -> Dict[str, Any]:
@@ -66,7 +74,7 @@ Lütfen yukarıdaki klinik bağlama sadık kalarak, kaynak atıflı ([Kaynak: CH
             "stream": False,
             "options": {
                 "temperature": 0.1,
-                "num_ctx": 8192
+                "num_ctx": self.context_window
             }
         }
 

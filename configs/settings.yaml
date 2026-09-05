@@ -1,5 +1,5 @@
 llm:
-  model_name: "qwen3:8b"
+  model_name: "qwen3.5:4b"
   provider: "ollama"
   context_window: 8000
   base_url: "http://localhost:11434"

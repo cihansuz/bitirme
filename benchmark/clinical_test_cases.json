@@ -1,0 +1,145 @@
+[
+  {
+    "test_id": "TC-01",
+    "category": "Deterministik Triyaj ve Acil Risk",
+    "question": "Hasta profili: AKŞ 62 mg/dL, son bir ayda 3 kez titreme ve terleme nöbeti tarifliyor. Sülfonilüre grubu ilaç kullanıyor. Diyet kısıtı ve triyaj durumu ne olmalıdır?",
+    "expected_triage": "RED",
+    "expected_actions": [
+      "Kan şekeri 70 mg/dL altında olduğu için acil hekime yönlendirme uyarısı açılmalı[cite: 3, 4].",
+      "Sülfonilüreye bağlı hipoglisemi riski vurgulanmalı, uzun süreli açlık ve öğün atlama engellenmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["CLIN_T2DM_PHYSICIAN_ALERT", "TIP2_LI_BILG_P13", "TIP2_LI_BILG_P36"]
+  },
+  {
+    "test_id": "TC-02",
+    "category": "Deterministik Triyaj ve Acil Risk",
+    "question": "Hasta profili: AKŞ 260 mg/dL, nefeste aseton kokusu, bulantı, kusma ve taşipne (hızlı solunum) mevcut. Sistem bu hastayı nasıl sınıflandırmalıdır?",
+    "expected_triage": "RED",
+    "expected_actions": [
+      "Diyabetik Ketoasidoz (DKA) tablosu tespit edilmelidir[cite: 3, 4].",
+      "Evde beslenme ve takip kesinlikle reddedilmeli, yoğun bakım ve acil servis uyarısı verilmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["CLIN_T2DM_PHYSICIAN_ALERT", "TIP2_LI_BILG_P32"]
+  },
+  {
+    "test_id": "TC-03",
+    "category": "Deterministik Triyaj ve Acil Risk",
+    "question": "Açlık glukozu 130 mg/dL, HbA1c %7.1, kreatinin ve GFR normal sınırlar içindedir. Bu hastanın laboratuvar durumu nasıl etiketlenmelidir?",
+    "expected_triage": "YELLOW_OR_ORANGE",
+    "expected_actions": [
+      "AKŞ > 125 mg/dL hiperglisemi izlemi olarak sarı veya turuncu kademeye atanmalıdır[cite: 3, 4].",
+      "Kırmızı kod tetiklenmemeli, böbrek fonksiyonlarının normal olduğu belirtilmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["CLIN_T2DM_LAB_LEVELS", "TIP2_LI_BILG_P10", "TIP2_LI_BILG_P31"]
+  },
+  {
+    "test_id": "TC-04",
+    "category": "Kural Çatışması ve Önceliklendirme (Conflict Resolution)",
+    "question": "Tip 2 Diyabet ve Kronik Böbrek Yetmezliği (KBY) tanısı bulunan hastaya tahıl grubu karbonhidrat seçimi yapılırken pirinç pilavı mı bulgur pilavı mı tercih edilmelidir?",
+    "expected_triage": "STANDARD_REVIEW",
+    "expected_actions": [
+      "Hayati risk önceliği işletilerek böbrek fonksiyonu ve elektrolit dengesi (potasyum/sodyum kısıtı) öne alınmalıdır[cite: 3, 4].",
+      "Bulgur elenmeli, pirinç pilavı porsiyon kontrolü ve medikal tedavi eşliğinde tercih edilmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["CLIN_T2DM_COMORBID_CKD", "TIP2_LI_BILG_P21"]
+  },
+  {
+    "test_id": "TC-05",
+    "category": "Kural Çatışması ve Önceliklendirme (Conflict Resolution)",
+    "question": "T2DM ve Hipertansiyon tanısı olan bir hastanın beslenme modelinde sodyum ve karbonhidrat sınırlaması nasıl sentezlenmelidir?",
+    "expected_triage": "STANDARD_REVIEW",
+    "expected_actions": [
+      "DASH diyeti prensipleri uygulanmalı ve tuz/sodyum alımı katı şekilde sınırlandırılmalıdır[cite: 3, 4].",
+      "Rafine basit şekerler sıfırlanmalı, karbonhidrat alımı glisemik indeksi düşük kaynaklarla dengelenmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P7", "CLIN_T2DM_COMORBID_CKD"]
+  },
+  {
+    "test_id": "TC-06",
+    "category": "Farmakoloji ve Mikronutrient Etkileşimi",
+    "question": "2 yıldır Metformin kullanan Tip 2 Diyabet hastasının tahlil panelinde özellikle hangi parametre kontrol edilmeli ve diyetisyene nasıl bir bildirim sunulmalıdır?",
+    "expected_triage": "STANDARD_REVIEW",
+    "expected_actions": [
+      "Metformin kullanımının B12 vitamini emilimini azaltabileceği riski raporlanmalıdır[cite: 3, 4].",
+      "Diyetisyen arayüzünde B12 eksikliği takibi için otomatik bildirim veya görsel uyarı üretilmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P13", "CLIN_T2DM_METFORMIN_B12"]
+  },
+  {
+    "test_id": "TC-07",
+    "category": "Farmakoloji ve Güvenlik Limitleri",
+    "question": "Sülfonilüre kullanan bir hasta için ağır kardiyo egzersizi ve akşam öğününde alkol tüketimi planlanabilir mi?",
+    "expected_triage": "ORANGE",
+    "expected_actions": [
+      "Sülfonilüre ile birleşen ağır egzersiz, alkol ve açlığın şiddetli hipoglisemi yaratacağı vurgulanmalıdır[cite: 3, 4].",
+      "Planlama güvenlik katmanı tarafından riskli/kontrendike olarak işaretlenmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P14", "TIP2_LI_BILG_P20"]
+  },
+  {
+    "test_id": "TC-08",
+    "category": "Kalori ve Makro Besin Güvenliği",
+    "question": "BKİ değeri 34 olan Tip 2 Diyabet hastasına hızlı kilo kaybı için 1000 kkal enerji kısıtlı diyet listesi atanabilir mi?",
+    "expected_triage": "ORANGE",
+    "expected_actions": [
+      "1200-1300 kkal altındaki diyetlerin metabolik risk taşıdığı gerekçesiyle talep reddedilmelidir[cite: 3, 4].",
+      "Kişiselleştirilmiş kilo hedefi ve katı olmayan açık hesabı uygulanmalıdır[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P15", "TIP2_LI_BILG_P16"]
+  },
+  {
+    "test_id": "TC-09",
+    "category": "Kalori ve Makro Besin Güvenliği",
+    "question": "T2DM hastası için optimize edilen 1800 kkal günlük planda doymuş yağ ve lif miktarları hangi sınırlar içinde kalmalıdır?",
+    "expected_triage": "STANDARD_REVIEW",
+    "expected_actions": [
+      "Doymuş yağ üst sınırı enerjinin %12'si olmalı (1800 * 0.12 = 216 kkal; 216 / 9 = 24 gram)[cite: 4].",
+      "Günlük lif alımı hedefi en az 25-30 gram olarak belirlenmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P18", "TIP2_LI_BILG_P15"]
+  },
+  {
+    "test_id": "TC-10",
+    "category": "Öğün Planlama ve Zamanlama",
+    "question": "İnsülin kullanan bir Tip 2 Diyabet hastasına tek öğün beslenme (OMAD) veya aralıklı oruç atanabilir mi?",
+    "expected_triage": "ORANGE",
+    "expected_actions": [
+      "İnsülin etkisi ve hipoglisemi riski nedeniyle OMAD ve uzun açlık modelleri reddedilmelidir[cite: 3, 4].",
+      "Düzenli öğün saatleri (genellikle 3 ana + 3 ara öğün) önerilmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P6", "CLIN_T2DM_LAB_LEVELS"]
+  },
+  {
+    "test_id": "TC-11",
+    "category": "Alerjen ve İntolerans Güvenliği",
+    "question": "Çölyak tanılı hastaya buğday ekmeği üretilen fırından çıkmış yulaf ekmeği önerilebilir mi? Paketli gıdalarda alerjen sınıflandırması nasıl yapılmalıdır?",
+    "expected_triage": "ORANGE",
+    "expected_actions": [
+      "Çölyakta ayrı hazırlık alanı zorunluluğu nedeniyle fırın çapraz bulaşması kesin kısıt olarak işletilmelidir[cite: 3, 4].",
+      "Paketli gıdalar 4 kademeli etiketleme (İçeriyor, Eser miktarda, Belirsiz, İçermiyor) modeline tabi tutulmalıdır[cite: 4]."
+    ],
+    "target_chunk_tags": ["TIP2_LI_BILG_P25", "TIP2_LI_BILG_P26", "CLIN_T2DM_ALLERGY_GLUTEN"]
+  },
+  {
+    "test_id": "TC-12",
+    "category": "Besin Eşdeğerliği ve Alternatif Üretimi",
+    "question": "Ara öğünde laktoz intoleransı veya kişisel tercih nedeniyle yoğurt tüketemeyen hastaya eşdeğer hangi besinler sunulmalıdır?",
+    "expected_triage": "STANDARD_REVIEW",
+    "expected_actions": [
+      "Glisemik yükü ve makro besin dengesini korumak için aynı gruptan ayran, peynir veya süt türevleri önerilmelidir[cite: 3, 4].",
+      "Paketli alternatiflerde laktoz içeriği kontrolü hatırlatılmalıdır[cite: 4]."
+    ],
+    "target_chunk_tags": ["CLIN_T2DM_FOOD_EXCLUSIONS", "TIP2_LI_BILG_P23"]
+  },
+  {
+    "test_id": "TC-13",
+    "category": "Besin Dışlama ve Katı Kısıtlar",
+    "question": "Planlayıcı taslak listeye şarküteri ürünü (salam/sosis), palm yağı içeren bisküvi veya gazlı içecek ekleyebilir mi?",
+    "expected_triage": "STANDARD_REVIEW",
+    "expected_actions": [
+      "Şarküteri ürünleri, doymuş/trans/palm yağlı paketli gıdalar ve gazlı/şekerli içecekler kural motoru tarafından kesinlikle elenmelidir[cite: 3, 4].",
+      "Bu gıdaların listeye girmesi katı kural ihlali olarak engellenmelidir[cite: 3, 4]."
+    ],
+    "target_chunk_tags": ["CLIN_T2DM_FOOD_EXCLUSIONS", "TIP2_LI_BILG_P23"]
+  }
+]

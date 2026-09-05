@@ -19,6 +19,7 @@ def root():
         "status": "online",
         "service": "Clinical Articles RAG Q&A",
         "model": agent.model_name,
+        "context_window": agent.context_window,
         "indexed_chunks": len(agent.retriever.chunks)
     }
 
