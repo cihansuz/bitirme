@@ -34,10 +34,16 @@ CEVAP FORMATIN MUTLAKA ŞU ŞEKİLDE OLMALIDIR:
 3. KAYNAK ATIFLARI: Verdiğin her bilgi için metin içinde mutlaka [Kaynak: CHUNK_ID] formatında ilgili kaynak kimliğini ekle.
 """
 
-    def __init__(self, model_name: Optional[str] = None, ollama_url: Optional[str] = None):
+    def __init__(
+        self,
+        model_name: Optional[str] = None,
+        ollama_url: Optional[str] = None,
+        enable_thinking: Optional[bool] = None
+    ):
         llm_cfg = get_llm_config()
-        self.model_name = model_name or llm_cfg.get("model_name", "qwen3.5:4b")
+        self.model_name = model_name or llm_cfg.get("model_name", "qwen3:8b")
         self.ollama_url = ollama_url or llm_cfg.get("base_url", "http://localhost:11434")
+        self.enable_thinking = enable_thinking if enable_thinking is not None else llm_cfg.get("enable_thinking", False)
         self.retriever = HybridRetriever(top_k=6)
         os.makedirs("benchmark/results", exist_ok=True)
 
@@ -76,7 +82,7 @@ CEVAP FORMATIN MUTLAKA ŞU ŞEKİLDE OLMALIDIR:
             expected_triage = tc["expected_triage"]
             target_tags = tc.get("target_chunk_tags", [])
 
-            print(f"[{i}/{len(test_cases)}] {tid} ({tc['category']})...", end=" ", flush=True)
+            print(f"\n[{i}/{len(test_cases)}] {tid} ({tc['category']})...", flush=True)
 
             # 1. Retrieval Latency & Recall
             t_ret_0 = time.perf_counter()
@@ -86,6 +92,7 @@ CEVAP FORMATIN MUTLAKA ŞU ŞEKİLDE OLMALIDIR:
             retrieved_cids = [c["chunk_id"] for c in retrieved]
             matched_tags = [tag for tag in target_tags if any(tag in cid for cid in retrieved_cids)]
             tag_recall = len(matched_tags) / len(target_tags) if target_tags else 1.0
+            print(f"  [RAG] {len(retrieved)} pasaj çekildi ({round(t_ret, 2)}s). Model çıkarımı başlatılıyor...", flush=True)
 
             # 2. Context Construction
             context_blocks = []
@@ -107,6 +114,7 @@ Lütfen belirtilen cevap formatına uyarak yanıtla:"""
                 "system": self.SYSTEM_PROMPT,
                 "prompt": user_prompt,
                 "stream": True,
+                "think": self.enable_thinking,
                 "options": {
                     "temperature": 0.1,
                     "num_ctx": context_window
@@ -141,11 +149,13 @@ Lütfen belirtilen cevap formatına uyarak yanıtla:"""
                             break
                 total_time = time.perf_counter() - t_start
             except Exception as e:
-                print(f"[!] Hata: {e}", end=" ", flush=True)
+                print(f"  [!] Hata: {e}", flush=True)
                 total_time = time.perf_counter() - t_start
 
             throughput = generated_tokens / max(1.0, (total_time - ttft)) if total_time > ttft else 0.0
             answer_text = "".join(chunks)
+            if not self.enable_thinking:
+                answer_text = re.sub(r"<think>.*?</think>", "", answer_text, flags=re.DOTALL).strip()
 
             # 4. Triage & Citations
             triage_match_res = re.search(r"TR[İI]YAJ\s*KODU\s*:\s*([A-Z_]+)", answer_text, re.IGNORECASE)
@@ -156,7 +166,7 @@ Lütfen belirtilen cevap formatına uyarak yanıtla:"""
             has_citation = len(citations_found) > 0
 
             status_mark = "OK" if triage_success else "FAIL"
-            print(f"TTFT: {round(ttft, 2)}s | TPS: {round(throughput, 1)} | Triyaj: {predicted_triage} [{status_mark}]", flush=True)
+            print(f"  [LLM] TTFT: {round(ttft, 2)}s | TPS: {round(throughput, 1)} | Süre: {round(total_time, 1)}s | Triyaj: {predicted_triage} [{status_mark}]", flush=True)
 
             results.append({
                 "test_id": tid,
@@ -250,7 +260,15 @@ if __name__ == "__main__":
     parser.add_argument("--ollama-url", type=str, default=None, help="Ollama API URL")
     parser.add_argument("--test-cases", type=str, default="benchmark/clinical_test_cases.json", help="Test vakaları JSON dosyası")
     parser.add_argument("--contexts", type=int, nargs="+", default=[8000, 10000], help="Test edilecek context boyutları (örn: 8000 10000)")
+    parser.add_argument("--enable-thinking", action="store_true", default=None, help="Düşünme (reasoning) sürecini açar")
+    parser.add_argument("--disable-thinking", action="store_true", default=None, help="Düşünme (reasoning) sürecini kapatır")
 
     args = parser.parse_args()
-    bench = ClinicalBenchmark(model_name=args.model, ollama_url=args.ollama_url)
+    thinking_setting = None
+    if args.disable_thinking:
+        thinking_setting = False
+    elif args.enable_thinking:
+        thinking_setting = True
+
+    bench = ClinicalBenchmark(model_name=args.model, ollama_url=args.ollama_url, enable_thinking=thinking_setting)
     bench.run_all(test_cases_path=args.test_cases, contexts=args.contexts)

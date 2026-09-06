@@ -28,12 +28,14 @@ GÖREVİN:
         self,
         model_name: Optional[str] = None,
         ollama_url: Optional[str] = None,
-        context_window: Optional[int] = None
+        context_window: Optional[int] = None,
+        enable_thinking: Optional[bool] = None
     ):
         llm_cfg = get_llm_config()
         self.model_name = model_name or llm_cfg.get("model_name", "qwen3.5:9b")
         self.ollama_url = ollama_url or llm_cfg.get("base_url", "http://localhost:11434")
         self.context_window = context_window or llm_cfg.get("context_window", 8000)
+        self.enable_thinking = enable_thinking if enable_thinking is not None else llm_cfg.get("enable_thinking", False)
         self.retriever = HybridRetriever()
 
     def ask(self, question: str, top_k: int = 4) -> Dict[str, Any]:
@@ -72,6 +74,7 @@ Lütfen yukarıdaki klinik bağlama sadık kalarak, kaynak atıflı ([Kaynak: CH
             "system": self.SYSTEM_PROMPT,
             "prompt": user_prompt,
             "stream": False,
+            "think": self.enable_thinking,
             "options": {
                 "temperature": 0.1,
                 "num_ctx": self.context_window
@@ -88,6 +91,8 @@ Lütfen yukarıdaki klinik bağlama sadık kalarak, kaynak atıflı ([Kaynak: CH
             with urllib.request.urlopen(req, timeout=120) as response:
                 res_body = json.loads(response.read().decode("utf-8"))
                 raw_answer = res_body.get("response", "").strip()
+                if not self.enable_thinking:
+                    raw_answer = re.sub(r"<think>.*?</think>", "", raw_answer, flags=re.DOTALL).strip()
         except Exception as e:
             raw_answer = f"Ollama çıkarım hatası: {e}"
 

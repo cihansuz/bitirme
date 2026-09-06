@@ -49,11 +49,11 @@ uv run pytest
 ```
 
 ### Adım 4: Benchmark Analizini Çalıştırma
-Şartname Bölüm 5 uyarınca 8K ve 16K context pencerelerinde TTFT, Throughput ve Halüsinasyon analizini çalıştırmak için:
+Klinik test vakaları ve context pencerelerinde TTFT, Throughput, Triyaj Doğruluğu ve Halüsinasyon analizini çalıştırmak için:
 ```powershell
-uv run python benchmark/run_benchmark.py
+uv run python benchmark/run_clinical_benchmark.py
 ```
-Sonuçlar `benchmark/results/benchmark_report.md` ve `benchmark/results/benchmark_report.json` dosyalarına otomatik yazılır.
+Sonuçlar `benchmark/results/` dizinine otomatik yazılır. Detaylı model karşılaştırma raporu ve reasoning optimizasyonu için [BENCHMARK_RAPORU.md](benchmark/results/BENCHMARK_RAPORU.md) dosyasına bakabilirsiniz.
 
 ---
 

@@ -3,13 +3,13 @@
     "model": "qwen3.5:9b",
     "context_window": 8000,
     "total_test_cases": 13,
-    "triage_accuracy_percent": 76.92,
+    "triage_accuracy_percent": 61.54,
     "citation_fidelity_percent": 100.0,
     "avg_chunk_recall_percent": 85.92,
-    "avg_retrieval_sec": 0.257,
-    "avg_ttft_sec": 157.07,
-    "avg_throughput_tps": 319.44,
-    "total_duration_sec": 2241.02
+    "avg_retrieval_sec": 0.154,
+    "avg_ttft_sec": 4.04,
+    "avg_throughput_tps": 31.15,
+    "total_duration_sec": 309.84
   },
   "test_cases": [
     {
@@ -19,7 +19,7 @@
       "expected_triage": "RED",
       "predicted_triage": "RED",
       "triage_match": true,
-      "retrieval_sec": 0.206,
+      "retrieval_sec": 0.171,
       "chunk_recall": 0.67,
       "target_chunk_tags": [
         "CLIN_T2DM_PHYSICIAN_ALERT",
@@ -32,16 +32,17 @@
       ],
       "citations_found": [
         "CLIN_T2DM_PHYSICIAN_ALERT",
+        "TIP2_LI_BILG_P31",
         "CLIN_T2DM_ANAMNEZ",
         "TIP2_LI_BILG_P36",
         "TIP2_LI_BILG_P1",
         "TIP2_LI_BILG_P14"
       ],
       "has_citation": true,
-      "ttft_sec": 166.08,
-      "total_sec": 181.44,
-      "throughput_tps": 304.2,
-      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın açlık kan şekeri (AKŞ) 62 mg/dL olarak ölçülmüş olup, bu değer <70 mg/dL sınırının altındadır ve titreme, terleme gibi hipoglisemi ..."
+      "ttft_sec": 12.67,
+      "total_sec": 31.32,
+      "throughput_tps": 30.2,
+      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın son bir ayda 3 kez titreme ve terleme nöbeti yaşamış olması, hipoglisemi (<70 mg/dL) semptomlarını göstermektedir; bu durum acil mü..."
     },
     {
       "test_id": "TC-02",
@@ -50,7 +51,7 @@
       "expected_triage": "RED",
       "predicted_triage": "RED",
       "triage_match": true,
-      "retrieval_sec": 0.209,
+      "retrieval_sec": 0.143,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "CLIN_T2DM_PHYSICIAN_ALERT",
@@ -63,22 +64,23 @@
       "citations_found": [
         "CLIN_T2DM_PHYSICIAN_ALERT",
         "TIP2_LI_BILG_P31",
+        "CLIN_T2DM_ANAMNEZ",
         "TIP2_LI_BILG_P32"
       ],
       "has_citation": true,
-      "ttft_sec": 127.8,
-      "total_sec": 138.71,
-      "throughput_tps": 341.4,
-      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın nefeste aseton kokusu, bulantı, kusma ve taşipne (hızlı solunum) belirtileri Diyabetik Ketoasidoz (DKA) tablosunu oluşturmaktadır [..."
+      "ttft_sec": 3.45,
+      "total_sec": 17.61,
+      "throughput_tps": 34.4,
+      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın semptomları (nefeste aseton kokusu, bulantı, kusma ve taşipne/hızlı solunum) Diyabetik Ketoasidoz (DKA) tablosunu oluşturmaktadır; ..."
     },
     {
       "test_id": "TC-03",
       "category": "Deterministik Triyaj ve Acil Risk",
       "question": "Açlık glukozu 130 mg/dL, HbA1c %7.1, kreatinin ve GFR normal sınırlar içindedir. Bu hastanın laboratuvar durumu nasıl etiketlenmelidir?",
       "expected_triage": "YELLOW_OR_ORANGE",
-      "predicted_triage": "YELLOW",
-      "triage_match": true,
-      "retrieval_sec": 0.198,
+      "predicted_triage": "STANDARD_REVIEW",
+      "triage_match": false,
+      "retrieval_sec": 0.147,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "CLIN_T2DM_LAB_LEVELS",
@@ -92,25 +94,23 @@
       ],
       "citations_found": [
         "CLIN_T2DM_LAB_LEVELS",
-        "TIP2_LI_BILG_P10",
         "TIP2_LI_BILG_P31",
-        "CLIN_T2DM_METFORMIN_B12",
-        "CLIN_T2DM_PHYSICIAN_ALERT"
+        "CLIN_T2DM_METFORMIN_B12"
       ],
       "has_citation": true,
-      "ttft_sec": 188.58,
-      "total_sec": 203.09,
-      "throughput_tps": 379.5,
-      "answer_snippet": "1. TRİYAJ KODU: YELLOW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın açlık kan şekeri 130 mg/dL olarak ölçülmüş olup, bu değer 125 mg/dL üzeri hiperglisemi eşik değerini aşmaktadır [TIP2_LI_BILG_P3..."
+      "ttft_sec": 3.28,
+      "total_sec": 20.54,
+      "throughput_tps": 33.7,
+      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın açlık kan şekeri 130 mg/dL olarak ölçülmüştür; bu değer hiperglisemi (açlık kan şekerinin 125 mg/dL üzeri) sınırını aşm..."
     },
     {
       "test_id": "TC-04",
       "category": "Kural Çatışması ve Önceliklendirme (Conflict Resolution)",
       "question": "Tip 2 Diyabet ve Kronik Böbrek Yetmezliği (KBY) tanısı bulunan hastaya tahıl grubu karbonhidrat seçimi yapılırken pirinç pilavı mı bulgur pilavı mı tercih edilmelidir?",
       "expected_triage": "STANDARD_REVIEW",
-      "predicted_triage": "YELLOW",
-      "triage_match": false,
-      "retrieval_sec": 0.226,
+      "predicted_triage": "STANDARD_REVIEW",
+      "triage_match": true,
+      "retrieval_sec": 0.153,
       "chunk_recall": 0.5,
       "target_chunk_tags": [
         "CLIN_T2DM_COMORBID_CKD",
@@ -121,17 +121,15 @@
       ],
       "citations_found": [
         "CLIN_T2DM_COMORBID_CKD",
-        "TIP2_LI_BILG_P1_1",
-        "CLIN_T2DM_ANAMNEZ",
         "TIP2_LI_BILG_P1",
         "TIP2_LI_BILG_P16",
         "TIP2_LI_BILG_P22"
       ],
       "has_citation": true,
-      "ttft_sec": 97.26,
-      "total_sec": 117.53,
-      "throughput_tps": 159.5,
-      "answer_snippet": "1. TRİYAJ KODU: YELLOW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastada hem Tip 2 Diyabet hem de Kronik Böbrek Yetmezliği (KBY) mevcut olduğundan, beslenme planında böbrek hastalığı yönetimi diyabet yö..."
+      "ttft_sec": 3.41,
+      "total_sec": 21.88,
+      "throughput_tps": 30.9,
+      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın Tip 2 Diyabet ve Kronik Böbrek Yetmezliği (KBY) gibi iki eşlik eden hastalığı olduğundan, beslenme planında **böbrek ha..."
     },
     {
       "test_id": "TC-05",
@@ -140,7 +138,7 @@
       "expected_triage": "STANDARD_REVIEW",
       "predicted_triage": "STANDARD_REVIEW",
       "triage_match": true,
-      "retrieval_sec": 0.208,
+      "retrieval_sec": 0.151,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P7",
@@ -153,16 +151,14 @@
       "citations_found": [
         "TIP2_LI_BILG_P18",
         "CLIN_T2DM_COMORBID_CKD",
-        "TIP2_LI_BILG_P25",
         "TIP2_LI_BILG_P7",
-        "TIP2_LI_BILG_P37",
         "TIP2_LI_BILG_P22"
       ],
       "has_citation": true,
-      "ttft_sec": 176.92,
-      "total_sec": 196.15,
-      "throughput_tps": 269.3,
-      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: *   **Hastanın Tanı Süreci ve Hekim İş Birliği:** Hastanın tanısı doktor tarafından konulup bize sevk edilmeli, süreç hekim ve diy..."
+      "ttft_sec": 3.49,
+      "total_sec": 24.89,
+      "throughput_tps": 32.5,
+      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastada hem Tip 2 Diyabet (T2DM) hem de Hipertansiyon tanısı mevcuttur; bu durumda beslenme planında **hipertansiyon ve kardiyov..."
     },
     {
       "test_id": "TC-06",
@@ -171,7 +167,7 @@
       "expected_triage": "STANDARD_REVIEW",
       "predicted_triage": "STANDARD_REVIEW",
       "triage_match": true,
-      "retrieval_sec": 0.215,
+      "retrieval_sec": 0.151,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P13",
@@ -188,19 +184,19 @@
         "CLIN_T2DM_METFORMIN_B12"
       ],
       "has_citation": true,
-      "ttft_sec": 147.98,
-      "total_sec": 160.7,
-      "throughput_tps": 344.9,
-      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın antropometrik verileri (boy, kilo, BKİ ve bel çevresi) mutlaka değerlendirilmeli ve kaydedilmelidir [Kaynak: CLIN_T2DM_..."
+      "ttft_sec": 3.18,
+      "total_sec": 20.47,
+      "throughput_tps": 31.1,
+      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Vital Parametrelerin Değerlendirilmesi:** Hastanın boyu, kilosu, Beden Kitle İndeksi (BKİ), bel çevresi ve son 3–6 aydaki kilo..."
     },
     {
       "test_id": "TC-07",
       "category": "Farmakoloji ve Güvenlik Limitleri",
       "question": "Sülfonilüre kullanan bir hasta için ağır kardiyo egzersizi ve akşam öğününde alkol tüketimi planlanabilir mi?",
       "expected_triage": "ORANGE",
-      "predicted_triage": "ORANGE",
-      "triage_match": true,
-      "retrieval_sec": 0.205,
+      "predicted_triage": "RED",
+      "triage_match": false,
+      "retrieval_sec": 0.144,
       "chunk_recall": 0.5,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P14",
@@ -214,19 +210,19 @@
         "TIP2_LI_BILG_P14_1"
       ],
       "has_citation": true,
-      "ttft_sec": 195.85,
-      "total_sec": 206.62,
-      "throughput_tps": 527.9,
-      "answer_snippet": "1. TRİYAJ KODU: ORANGE  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Sülfonilüre kullanan hastalarda hipoglisemi riski yüksektir ve bu ilaçlar özellikle öğün atlaması veya beslenememe durumlarında ortaya çı..."
+      "ttft_sec": 3.15,
+      "total_sec": 21.7,
+      "throughput_tps": 30.9,
+      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Sülfonilüre Kullanımı ve Hipoglisemi Riski:** Sülfonilüre grubu ilaçlar, kan şekerini düşürmek için pankreastan insülin salgılatır. Bu ila..."
     },
     {
       "test_id": "TC-08",
       "category": "Kalori ve Makro Besin Güvenliği",
       "question": "BKİ değeri 34 olan Tip 2 Diyabet hastasına hızlı kilo kaybı için 1000 kkal enerji kısıtlı diyet listesi atanabilir mi?",
       "expected_triage": "ORANGE",
-      "predicted_triage": "YELLOW",
+      "predicted_triage": "RED",
       "triage_match": false,
-      "retrieval_sec": 0.219,
+      "retrieval_sec": 0.167,
       "chunk_recall": 0.5,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P15",
@@ -243,10 +239,10 @@
         "CLIN_T2DM_COMORBID_CKD"
       ],
       "has_citation": true,
-      "ttft_sec": 141.57,
-      "total_sec": 157.8,
-      "throughput_tps": 262.0,
-      "answer_snippet": "1. TRİYAJ KODU: YELLOW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastaya 1000 kkal enerji kısıtlı diyet listesi doğrudan atanamaz; \"Alması gerekenden 500-750 kkal eksik olmalı\" gibi katı bir sınır koyul..."
+      "ttft_sec": 3.35,
+      "total_sec": 24.34,
+      "throughput_tps": 30.7,
+      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - BKİ 34 olan hasta obezite sınıfı II'de yer almakta olup, bu durum Tip 2 Diyabet yönetimi için ciddi bir risk faktörüdür; ancak \"hızlı kilo k..."
     },
     {
       "test_id": "TC-09",
@@ -255,7 +251,7 @@
       "expected_triage": "STANDARD_REVIEW",
       "predicted_triage": "STANDARD_REVIEW",
       "triage_match": true,
-      "retrieval_sec": 0.199,
+      "retrieval_sec": 0.149,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P18",
@@ -268,15 +264,15 @@
       "citations_found": [
         "TIP2_LI_BILG_P18",
         "TIP2_LI_BILG_P18_1",
+        "TIP2_LI_BILG_P16",
         "CLIN_T2DM_COMORBID_CKD",
-        "TIP2_LI_BILG_P37",
         "TIP2_LI_BILG_P15"
       ],
       "has_citation": true,
-      "ttft_sec": 170.42,
-      "total_sec": 186.34,
-      "throughput_tps": 312.9,
-      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: *   **Lif Hedefi:** Hastanın günlük lif alımı, ekstrem bir durumu yoksa ve verilen listelere uyulduğu takdirde 25-30 gram arasında..."
+      "ttft_sec": 3.36,
+      "total_sec": 26.25,
+      "throughput_tps": 28.8,
+      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Doymuş Yağ Sınırı:** Hastanın günlük enerji ihtiyacı olan 1800 kkal içinde doymuş yağ alımının toplam enerjinin %12'sini geçme..."
     },
     {
       "test_id": "TC-10",
@@ -285,7 +281,7 @@
       "expected_triage": "ORANGE",
       "predicted_triage": "ORANGE",
       "triage_match": true,
-      "retrieval_sec": 0.193,
+      "retrieval_sec": 0.169,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P6",
@@ -299,22 +295,23 @@
         "TIP2_LI_BILG_P6",
         "CLIN_T2DM_LAB_LEVELS",
         "CLIN_T2DM_ANAMNEZ",
-        "CLIN_T2DM_COMORBID_CKD"
+        "CLIN_T2DM_COMORBID_CKD",
+        "CLIN_T2DM_METFORMIN_B12"
       ],
       "has_citation": true,
-      "ttft_sec": 97.8,
-      "total_sec": 113.36,
-      "throughput_tps": 197.3,
-      "answer_snippet": "1. TRİYAJ KODU: ORANGE  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - İnsülin kullanan diyabet hastalarında öğün saatleri belirlidir ve bu düzenin OMAD veya aralıklı oruç gibi yöntemlerle değiştirilmesi, hip..."
+      "ttft_sec": 3.32,
+      "total_sec": 25.92,
+      "throughput_tps": 30.5,
+      "answer_snippet": "1. TRİYAJ KODU: ORANGE  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **İnsülin Kullanımı ve Öğün Saatleri:** Hastanın insülin kullandığı belirtilmiştir; bu durumda öğün saatleri kesinlikle belirlidir ve esn..."
     },
     {
       "test_id": "TC-11",
       "category": "Alerjen ve İntolerans Güvenliği",
       "question": "Çölyak tanılı hastaya buğday ekmeği üretilen fırından çıkmış yulaf ekmeği önerilebilir mi? Paketli gıdalarda alerjen sınıflandırması nasıl yapılmalıdır?",
       "expected_triage": "ORANGE",
-      "predicted_triage": "ORANGE",
-      "triage_match": true,
-      "retrieval_sec": 0.195,
+      "predicted_triage": "RED",
+      "triage_match": false,
+      "retrieval_sec": 0.161,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "TIP2_LI_BILG_P25",
@@ -332,10 +329,10 @@
         "CLIN_T2DM_ALLERGY_GLUTEN"
       ],
       "has_citation": true,
-      "ttft_sec": 190.07,
-      "total_sec": 205.48,
-      "throughput_tps": 358.8,
-      "answer_snippet": "1. TRİYAJ KODU: ORANGE  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Çölyak hastası için buğday ekmeği üretilen fırından çıkmış yulaf ekmeği önerilmez; çünkü çapraz bulaşma riski vardır ve mutlaka ayrı bir ..."
+      "ttft_sec": 3.19,
+      "total_sec": 26.69,
+      "throughput_tps": 29.8,
+      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Çapraz Bulaşma Riski ve Fırın Kullanımı:** Çölyak hastası olan bir bireye, buğday ekmeği üretilen fırından çıkmış yulaf ekmeği önerilmesi ..."
     },
     {
       "test_id": "TC-12",
@@ -344,7 +341,7 @@
       "expected_triage": "STANDARD_REVIEW",
       "predicted_triage": "STANDARD_REVIEW",
       "triage_match": true,
-      "retrieval_sec": 0.192,
+      "retrieval_sec": 0.142,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "CLIN_T2DM_FOOD_EXCLUSIONS",
@@ -357,14 +354,16 @@
       "citations_found": [
         "CLIN_T2DM_FOOD_EXCLUSIONS",
         "CLIN_T2DM_COMORBID_CKD",
+        "TIP2_LI_BILG_P26",
         "TIP2_LI_BILG_P5",
+        "TIP2_LI_BILG_P29",
         "TIP2_LI_BILG_P23"
       ],
       "has_citation": true,
-      "ttft_sec": 203.48,
-      "total_sec": 217.22,
-      "throughput_tps": 424.1,
-      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - Hastanın laktoz intoleransı veya kişisel tercihi nedeniyle yoğurt tüketememesi durumunda, aynı besin grubundan ve benzer makro/m..."
+      "ttft_sec": 3.29,
+      "total_sec": 26.08,
+      "throughput_tps": 30.7,
+      "answer_snippet": "1. TRİYAJ KODU: STANDARD_REVIEW  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Besin Eşdeğerliği ve Alternatif Seçimi:** Yoğurt tüketemeyen (laktoz intoleransı veya tercih nedeniyle) hastaya, aynı besin gr..."
     },
     {
       "test_id": "TC-13",
@@ -373,7 +372,7 @@
       "expected_triage": "STANDARD_REVIEW",
       "predicted_triage": "RED",
       "triage_match": false,
-      "retrieval_sec": 0.882,
+      "retrieval_sec": 0.152,
       "chunk_recall": 1.0,
       "target_chunk_tags": [
         "CLIN_T2DM_FOOD_EXCLUSIONS",
@@ -385,16 +384,14 @@
       ],
       "citations_found": [
         "CLIN_T2DM_FOOD_EXCLUSIONS",
-        "TIP2_LI_BILG_P20",
-        "TIP2_LI_BILG_P26",
         "TIP2_LI_BILG_P23",
         "TIP2_LI_BILG_P30"
       ],
       "has_citation": true,
-      "ttft_sec": 138.05,
-      "total_sec": 153.23,
-      "throughput_tps": 270.9,
-      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Kesin Yasağı Uygulama:** Şarküteri ürünleri (salam, sosis), palm yağı içeren bisküviler ve gazlı içecekler diyet listesine kesinlikle ekle..."
+      "ttft_sec": 3.32,
+      "total_sec": 20.14,
+      "throughput_tps": 30.8,
+      "answer_snippet": "1. TRİYAJ KODU: RED  2. KLİNİK DEĞERLENDİRME VE EYLEMLER: - **Şarküteri Ürünleri (Salam, Sosis):** Bu ürünler diyetten tamamen çıkarılmalıdır; planlayıcı taslak listeye kesinlikle eklenemez [Kaynak: C..."
     }
   ]
 }
